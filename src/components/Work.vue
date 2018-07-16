@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="work">
     <h3>work</h3>
     <div v-for="job in jobs">
       <p>{{job.year}}, {{job.company}}</p>

@@ -1,10 +1,11 @@
 <template>
   <div>
     <h3>detail</h3>
-    <p>{{cname}} like music</p>
-    <p>Holiday, {{cname}} usually make software things in my house</p>
+    <p><span v-bind:class="nameColor">{{cname}}</span> like music</p>
+    <p>Holiday, <span v-bind:class="nameColor">{{cname}}</span> usually make software things in my house</p>
     <p>My height is {{height}} cm</p>
     <button v-on:click="calcHalf">half</button>
+    <button v-on:click="changeNameColor">summer</button>
   </div>
 </template>
 
@@ -14,7 +15,8 @@ export default{
   data(){
     return{
       name: "kohei",
-      height: 168
+      height: 168,
+      nameColor: "nameRed",
     }
   },
   computed:{
@@ -29,7 +31,22 @@ export default{
       if(halfheight>=1.0){
         this.height = halfheight;
       }
+    },
+    changeNameColor: function(){
+      this.nameColor = "nameBlue";
     }
   }
 }
 </script>
+
+<style>
+
+.nameRed{
+  color: red;
+}
+
+.nameBlue{
+  color :lightskyblue;
+}
+
+</style>
